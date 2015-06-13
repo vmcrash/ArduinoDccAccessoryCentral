@@ -63,14 +63,16 @@ int RotaryEncoder::readAnalog() {
 unsigned char RotaryEncoder::getState() {
   int analogValue = readAnalog();
   // discard noise
-  for (;;) {
+  for (unsigned char i = 0; i < 3; i++) {
     int secondAnalogValue = readAnalog();
     if (abs(analogValue - secondAnalogValue) < 3) {
-      break;
+      continue;
     }
+
     analogValue = secondAnalogValue;
+    i = 0;
   }
-  
+
   if (isMatching(analogValue, ANALOG_A)) return STATE_A;
   if (isMatching(analogValue, ANALOG_B)) return STATE_B;
   if (isMatching(analogValue, ANALOG_AB)) return STATE_AB;
@@ -98,7 +100,7 @@ char RotaryEncoder::getKey() {
     if (state == prevState) {
       // check for held select button
       if (state == STATE_S && pressed) {
-        if (repeatCounter == 4000) {
+        if (repeatCounter == 2000) {
           return 4;
         }
         
