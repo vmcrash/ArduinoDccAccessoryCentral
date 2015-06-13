@@ -6,7 +6,6 @@
 #include <util/atomic.h>
 #include <util/delay.h>
 #include "DccSignaler.h"
-//#include "CommandParser.h"
 #include "CharLCD.h"
 #include "RotaryEncoder.h"
 #include "TrackPlan.h"
@@ -26,7 +25,6 @@ void sendIdlePackets() {
 }
 
 
-// CommandParser parser;
 CharLCD charLcd;
 RotaryEncoder encoder(A5);
 
@@ -36,8 +34,6 @@ void setup() {
 
   sendResetPackets();
   sendIdlePackets();
-  
-//  parser.setup();
 }
 
 void loop() {
