@@ -51,7 +51,7 @@
 static uint8_t new_Font[] PROGMEM = {
 */
 // according to http://gcc.gnu.org/bugzilla/show_bug.cgi?id=34734 this will produce a warning
-static uint8_t FONT8x8[] PROGMEM = {
+const static uint8_t FONT8x8[] PROGMEM = {
     // font data
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, // 0
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, // 1

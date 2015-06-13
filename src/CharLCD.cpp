@@ -36,7 +36,7 @@ void CharLCD::_print(unsigned char chr, unsigned char x, unsigned char y) {
   lcd.writeCommand(0xb8 | y, chip);
   lcd.writeCommand(0x40 | ((x & 7) * 8), chip);
 
-  unsigned char* ptr = FONT8x8 + chr * 8;
+  const uint8_t* ptr = FONT8x8 + chr * 8;
   for (unsigned i = 8; i-- > 0; ptr++) {
     unsigned char data = pgm_read_byte(ptr);
     data ^= xorMask;
