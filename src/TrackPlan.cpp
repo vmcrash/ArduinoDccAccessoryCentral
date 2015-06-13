@@ -13,8 +13,8 @@ const unsigned int TURNOUT_4 = 3;
 const unsigned int TURNOUT_5 = 4;
 const unsigned int TURNOUT_6 = 5;
 const unsigned int TURNOUT_7 = 6;
-const unsigned int TURNOUT_9 = 9;
-const unsigned int TURNOUT_10 = 10;
+const unsigned int TURNOUT_9 = 8;
+const unsigned int TURNOUT_10 = 9;
 
 
 
